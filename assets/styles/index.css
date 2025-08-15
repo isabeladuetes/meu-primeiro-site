@@ -24,41 +24,32 @@ header {
 
 main {
     flex: 1;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     padding: 48px 38px;
 }
 
-#sobre-mim {
-    display: block;
+section {
     background-color: rgb(243, 243, 243);
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
     padding: 40px;
     border-radius: 12px;
-    margin-bottom: 40px;
 }
 
-#titulo-sobre-mim {
+#titulo-sobre-mim,
+#titulo-meus-hobbies {
     font-size: 20px;
-    margin-bottom: 16px;
-    border-bottom: 2px solid rgb(255, 20, 90, 0.301);
+    border-bottom: 2px solid rgba(255, 20, 90, 0.301);
     margin-bottom: 20px;
 }
 
 .texto-sobre-mim {
     font-size: 16px;
+    margin-bottom: 8px;
 }
 
-#meus-hobbies {
-    background-color: rgb(243, 243, 243);
-    width: 80%;
-    margin: 0 auto;
-    padding: 40px;
-    border-radius: 12px;
-    margin-bottom: 40px;
-}
-
-#meus-hooies {
+/* Corrigido id errado */
+#titulo-meus-hobbies {
     font-size: 20px;
     margin-bottom: 16px;
 }
@@ -67,31 +58,25 @@ ul {
     list-style: none;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
+    justify-content: center;
 }
 
 li {
     background-color: rgb(214, 214, 214);
-    padding: 8px;
-    border-left: 4px solid rgb(255, 20, 90, 0.301);
+    padding: 8px 16px;
+    border-left: 4px solid rgba(255, 20, 90, 0.301);
     border-radius: 12px;
     font-size: 16px;
-    min-width: 250px;
-}
-
-li:hover {
-    background-color: rgb(255, 20, 90, 0.301);
-    transform: translateX(5px);
+    min-width: 220px;
+    text-align: center;
     transition: all 0.3s ease;
 }
 
-#contato {
-    background-color: rgb(243, 243, 243);
-    width: 80%;
-    margin: 0 auto;
-    padding: 40px;
-    border-radius: 12px;
-    margin-bottom: 40px;
+li:hover {
+    background-color: rgba(255, 20, 90, 0.301);
+    transform: translateX(5px);
 }
 
 #contato h3 {
@@ -106,32 +91,104 @@ li:hover {
 }
 
 #contato a {
-    color: rgb(255, 20, 90, 0.301);
+    color: rgba(255, 20, 90, 0.3);
     text-decoration: none;
     font-weight: bold;
     padding: 0.5rem 1rem;
-    margin: 0 0.5rem;
-    border: 2px solid rgb(255, 20, 90, 0.301);
+    margin: 0.5rem;
+    border: 2px solid rgba(255, 20, 90, 0.3);
     border-radius: 25px;
-    font-family: DM Serif Text;
+    font-family: 'DM Serif Text', serif;
     display: inline-block;
     transition: all 0.3s ease;
 }
 
 #contato a:hover {
-    background-color: rgb(255, 20, 90, 0.301);
+    background-color: rgba(255, 20, 90, 0.3);
     color: black;
     transform: translateY(-2px);
 }
 
 footer {
-    background-color: rgb(255, 20, 90, 0.301);
+    background-color: rgba(255, 20, 90, 0.301);
     color: black;
     padding: 2rem;
-    width: 100%;
     text-align: center;
+    font-size: 14px;
 }
 
-footer p {
-    font-size: 14px;
+footer a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* =======================
+   RESPONSIVIDADE
+========================== */
+
+@media (max-width: 992px) {
+    li {
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 50px 20px;
+    }
+
+    section {
+        width: 90%;
+        padding: 30px;
+    }
+
+    li {
+        flex: 1 1 100%;
+        min-width: unset;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contato a {
+        display: block;
+        margin: 0.5rem auto;
+        width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 32px 16px;
+    }
+
+    section {
+        width: 100%;
+        padding: 24px;
+    }
+
+    li {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #contato a {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
 }
